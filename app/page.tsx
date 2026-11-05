@@ -722,48 +722,56 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#faf9f6] text-stone-800">
       {/* Barra superior informativa estilo boutique de adopción */}
-      <div className="border-b border-stone-200/70 bg-stone-900 px-4 py-2 text-center text-xs text-stone-200">
+      <div className="border-b border-stone-800 bg-stone-950 px-4 py-2.5 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-stone-300">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-6 gap-y-1">
-          <span>🩺 Control veterinario y vacunas incluidas</span>
-          <span className="hidden sm:inline text-stone-500">·</span>
-          <span>🎁 Pañuelo y manta de apego gratis con cada adopción</span>
-          <span className="hidden md:inline text-stone-500">·</span>
-          <span className="hidden md:inline">
-            📍 Espacio de visitas: Lun a Sáb 10:00 – 19:00 hrs
+          <span className="text-amber-200/90">
+            ✦ Control veterinario y vacunas incluidas
+          </span>
+          <span className="hidden sm:inline text-stone-600">|</span>
+          <span>Pañuelo y manta de apego gratis con cada adopción</span>
+          <span className="hidden md:inline text-stone-600">|</span>
+          <span className="hidden md:inline text-stone-400">
+            Visitas: Lun a Sáb · 10:00 – 19:00 hrs
           </span>
         </div>
       </div>
 
       {/* Header de tienda de adopción */}
       <header className="sticky top-0 z-30 border-b border-stone-200/80 bg-[#faf9f6]/95 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-6">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-8">
             <button
               type="button"
               onClick={resetAllFilters}
-              className="flex items-center gap-3 text-left transition hover:opacity-80"
+              className="flex items-center gap-3.5 text-left transition hover:opacity-80"
               title="Volver al inicio y mostrar todos"
             >
               <span
                 aria-hidden="true"
-                className="flex h-10 w-10 items-center justify-center rounded-2xl border border-amber-200/80 bg-amber-50 text-lg shadow-2xs"
+                className="flex h-11 w-11 items-center justify-center rounded-2xl border border-amber-300/70 bg-gradient-to-br from-amber-50 to-stone-100 text-lg shadow-2xs"
               >
                 🐾
               </span>
               <div>
-                <span className="block text-base font-semibold tracking-tight text-stone-900">
+                <span className="block font-serif text-lg sm:text-xl font-semibold uppercase tracking-[0.2em] text-stone-900">
                   Huellas Boutique
                 </span>
-                <span className="block text-[11px] font-medium text-stone-500">
-                  Centro & Tienda de Adopción
+                <span className="block text-[9px] font-semibold uppercase tracking-[0.28em] text-amber-800/80">
+                  Maison & Centro de Adopción
                 </span>
               </div>
             </button>
 
             <nav
               aria-label="Navegación principal"
-              className="hidden md:flex items-center gap-5 text-xs font-medium text-stone-600"
+              className="hidden lg:flex items-center gap-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-500"
             >
+              <a
+                href="#inicio"
+                className="text-stone-900 underline decoration-amber-500/70 decoration-2 underline-offset-8 transition hover:text-amber-900"
+              >
+                Home
+              </a>
               <a
                 href="#catalogo-mascotas"
                 className="transition hover:text-stone-900"
@@ -774,7 +782,7 @@ export default function Home() {
                 href="#kits-bienvenida"
                 className="transition hover:text-stone-900"
               >
-                Kits de Bienvenida
+                Boutique Kits
               </a>
               <a
                 href="#proceso-adopcion"
@@ -797,7 +805,7 @@ export default function Home() {
               type="button"
               onClick={() => setOnlyFavorites((prev) => !prev)}
               aria-pressed={onlyFavorites}
-              className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-medium transition-all ${
+              className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] transition-all ${
                 onlyFavorites
                   ? "border-rose-300 bg-rose-50 text-rose-700 shadow-2xs"
                   : "border-stone-200 bg-white text-stone-600 hover:border-stone-300 hover:text-stone-900"
@@ -808,7 +816,7 @@ export default function Home() {
               </span>
               <span className="hidden sm:inline">Favoritos</span>
               <span
-                className={`rounded-full px-1.5 py-0.5 text-[11px] ${
+                className={`rounded-full px-1.5 py-0.5 text-[10px] tracking-normal ${
                   onlyFavorites
                     ? "bg-rose-200/70 text-rose-800"
                     : "bg-stone-100 text-stone-700"
@@ -822,11 +830,11 @@ export default function Home() {
             <button
               type="button"
               onClick={() => setIsDrawerOpen(true)}
-              className="inline-flex items-center gap-2 rounded-full bg-stone-900 px-4 py-2 text-xs font-medium text-white shadow-2xs transition hover:bg-stone-800"
+              className="inline-flex items-center gap-2 rounded-full bg-stone-900 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-2xs transition hover:bg-stone-800"
             >
               <span aria-hidden="true">🛍️</span>
               <span>Mi Adopción</span>
-              <span className="rounded-full bg-amber-300 px-1.5 py-0.5 text-[11px] font-bold text-stone-900">
+              <span className="rounded-full bg-amber-300 px-1.5 py-0.5 text-[10px] font-bold tracking-normal text-stone-900">
                 {totalDrawerCount}
               </span>
             </button>
@@ -836,62 +844,86 @@ export default function Home() {
 
       {/* Contenido principal */}
       <main className="mx-auto flex-1 w-full max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-        {/* Hero Banner de Tienda de Adopción */}
-        <section className="relative mb-12 overflow-hidden rounded-3xl border border-stone-200/90 bg-gradient-to-br from-white via-[#faf9f6] to-amber-50/50 p-6 sm:p-10 shadow-2xs">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
+        {/* Hero Banner Principal (HOME) con Tipografía Mayúscula y Elegante */}
+        <section
+          id="inicio"
+          className="relative mb-14 overflow-hidden rounded-[2rem] border border-stone-200/90 bg-gradient-to-br from-white via-[#faf9f6] to-amber-50/60 p-6 sm:p-12 shadow-sm"
+        >
+          {/* Ornamento sutil de fondo */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-amber-100/40 blur-3xl"
+          />
+          <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-amber-200/80 bg-amber-50/90 px-3 py-1 text-xs font-medium text-amber-900">
-                <span>✨ Adopción Responsable & Boutique Solidaria</span>
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-amber-300/70 bg-amber-50/90 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-amber-950 shadow-2xs">
+                <span aria-hidden="true" className="text-amber-700">
+                  ✦
+                </span>
+                <span>Colección de Adopción Responsable · 2026</span>
               </div>
-              <h1 className="mt-4 text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl lg:text-5xl">
-                Encuentra a tu nuevo compañero y prepara su llegada a casa.
+
+              <h1 className="mt-6 font-serif text-3xl font-semibold uppercase leading-[1.12] tracking-[0.08em] text-stone-900 sm:text-5xl lg:text-[3.35rem]">
+                El arte de dar un{" "}
+                <span className="block text-amber-900/90">
+                  hogar con elegancia
+                </span>{" "}
+                y corazón noble.
               </h1>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-stone-600">
-                Conoce la historia, salud y temperamento de cada perro y gato.
-                Agenda tu visita de adopción y complementa su llegada con
-                nuestros kits de bienvenida solidarios.
+
+              <div className="mt-5 flex items-center gap-3">
+                <span className="h-px w-12 bg-amber-700/40" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500">
+                  Perros & Gatos Seleccionados con Cuidado Veterinario
+                </span>
+              </div>
+
+              <p className="mt-5 max-w-xl text-sm sm:text-base leading-relaxed text-stone-600">
+                Conoce la historia, salud y temperamento de cada compañero en
+                nuestra galería curada. Agenda tu encuentro personalizado y
+                prepara su llegada con nuestros kits de bienvenida solidarios.
               </p>
 
-              <div className="mt-6 flex flex-wrap items-center gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-3.5">
                 <a
                   href="#catalogo-mascotas"
-                  className="inline-flex items-center gap-2 rounded-full bg-stone-900 px-5 py-2.5 text-xs sm:text-sm font-medium text-white shadow-xs transition hover:bg-stone-800"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-stone-900 px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-xs transition hover:bg-stone-800"
                 >
-                  <span>Explorar mascotas</span>
+                  <span>Explorar Mascotas</span>
                   <span aria-hidden="true">↓</span>
                 </a>
                 <a
                   href="#kits-bienvenida"
-                  className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-2.5 text-xs sm:text-sm font-medium text-stone-700 transition hover:border-stone-400 hover:bg-stone-50"
+                  className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-stone-800 transition hover:border-stone-400 hover:bg-stone-50"
                 >
-                  <span>Ver kits de bienvenida</span>
+                  <span>Kits de Bienvenida</span>
                 </a>
               </div>
 
-              {/* Métricas de confianza de la tienda */}
-              <div className="mt-8 grid grid-cols-3 gap-4 border-t border-stone-200/70 pt-6">
+              {/* Métricas de confianza de la tienda en formato editorial mayúsculo */}
+              <div className="mt-10 grid grid-cols-3 gap-4 border-t border-stone-200/80 pt-6">
                 <div>
-                  <span className="block text-xl font-semibold text-stone-900">
+                  <span className="block font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-[0.08em] text-stone-900">
                     100%
                   </span>
-                  <span className="text-xs text-stone-500">
-                    Vacunados y revisados
+                  <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-500">
+                    Salud & Vacunas al Día
                   </span>
                 </div>
                 <div>
-                  <span className="block text-xl font-semibold text-stone-900">
+                  <span className="block font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-[0.08em] text-stone-900">
                     +240
                   </span>
-                  <span className="text-xs text-stone-500">
-                    Familias felices este año
+                  <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-500">
+                    Hogares Creados
                   </span>
                 </div>
                 <div>
-                  <span className="block text-xl font-semibold text-stone-900">
-                    30 días
+                  <span className="block font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-[0.08em] text-stone-900">
+                    30 Días
                   </span>
-                  <span className="text-xs text-stone-500">
-                    Acompañamiento post-adopción
+                  <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-500">
+                    Guía Post-Adopción
                   </span>
                 </div>
               </div>
@@ -909,8 +941,16 @@ export default function Home() {
                     openPetDetail(PETS[0]);
                   }
                 }}
-                className="group relative overflow-hidden rounded-3xl border border-stone-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                className="group relative overflow-hidden rounded-3xl border border-stone-200/90 bg-white p-4 sm:p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
               >
+                <div className="mb-3 flex items-center justify-between px-1">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
+                    Retrato Destacado
+                  </span>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-amber-800">
+                    Nº 01 · Edición Semanal
+                  </span>
+                </div>
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-stone-100">
                   <Image
                     src={PETS[0].image}
@@ -919,21 +959,21 @@ export default function Home() {
                     sizes="(max-width: 1024px) 100vw, 420px"
                     className="object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute top-3 left-3 rounded-full bg-stone-900/85 px-3 py-1 text-[11px] font-medium text-amber-200 backdrop-blur-xs">
-                    ⭐ Destacado de la semana
+                  <span className="absolute top-3 left-3 rounded-full bg-stone-950/85 px-3.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-200 backdrop-blur-xs">
+                    ✦ Compañero de la Semana
                   </span>
                 </div>
-                <div className="mt-4 flex items-center justify-between px-1">
+                <div className="mt-4 flex items-center justify-between px-1 pt-1">
                   <div>
-                    <h2 className="text-lg font-semibold text-stone-900">
-                      Conoce a {PETS[0].name} ({PETS[0].breed})
+                    <h2 className="font-serif text-xl font-semibold uppercase tracking-[0.12em] text-stone-900">
+                      {PETS[0].name} · {PETS[0].breed}
                     </h2>
-                    <p className="text-xs text-stone-500">
+                    <p className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.16em] text-stone-500">
                       {PETS[0].age} · {PETS[0].traits.join(" · ")}
                     </p>
                   </div>
-                  <span className="rounded-full bg-amber-50 px-3 py-1.5 text-xs font-semibold text-amber-900 border border-amber-200">
-                    Ver perfil →
+                  <span className="rounded-full border border-amber-300/80 bg-amber-50 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-amber-950 transition group-hover:bg-amber-100">
+                    Ver Perfil →
                   </span>
                 </div>
               </div>
@@ -943,13 +983,27 @@ export default function Home() {
 
         {/* Sección Catálogo de Mascotas */}
         <section id="catalogo-mascotas" className="scroll-mt-24 mb-16">
+          <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between border-b border-stone-200/80 pb-5">
+            <div>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.26em] text-amber-800">
+                ✦ Galería Curada de Compañeros
+              </span>
+              <h2 className="mt-1.5 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-[0.12em] text-stone-900">
+                Nuestras Mascotas en Adopción
+              </h2>
+            </div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-500">
+              {filteredPets.length} de {PETS.length} Compañeros Disponibles
+            </p>
+          </div>
+
           {/* Barra de pestañas de cada mascota */}
           <div className="mb-5">
             <div className="flex items-center justify-between mb-2.5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-stone-400">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-stone-400">
                 Pestañas rápidas por mascota
               </p>
-              <span className="text-xs text-stone-400">
+              <span className="text-[11px] uppercase tracking-[0.14em] text-stone-400">
                 Haz clic en cualquiera para abrir su ficha
               </span>
             </div>
@@ -1467,13 +1521,13 @@ export default function Home() {
         >
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1 text-xs font-medium text-amber-900 border border-amber-200/70">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3.5 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-amber-900 border border-amber-200/70">
                 🛍️ Boutique Solidaria
               </span>
-              <h2 className="mt-2 text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">
+              <h2 className="mt-3 font-serif text-2xl font-semibold uppercase tracking-[0.12em] text-stone-900 sm:text-3xl">
                 Kits de Bienvenida & Esenciales
               </h2>
-              <p className="mt-1 max-w-xl text-sm text-stone-600">
+              <p className="mt-1.5 max-w-xl text-sm text-stone-600">
                 Prepara tu hogar con artículos seleccionados por veterinarios. El
                 100% de lo recaudado financia el refugio y alimento de nuevas
                 mascotas.
@@ -1580,11 +1634,11 @@ export default function Home() {
         {/* Sección Proceso de Adopción en 4 pasos */}
         <section id="proceso-adopcion" className="scroll-mt-24 mb-16">
           <div className="text-center max-w-2xl mx-auto mb-8">
-            <span className="rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium uppercase tracking-wider text-stone-500">
-              Experiencia guiada
+            <span className="rounded-full border border-stone-200 bg-white px-3.5 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-stone-500">
+              Experiencia Guiada
             </span>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">
-              ¿Cómo funciona nuestra tienda de adopción?
+            <h2 className="mt-3 font-serif text-2xl font-semibold uppercase tracking-[0.12em] text-stone-900 sm:text-3xl">
+              ¿Cómo Funciona Nuestra Boutique de Adopción?
             </h2>
             <p className="mt-2 text-sm text-stone-600">
               Un proceso transparente, cálido y acompañado por especialistas en
@@ -1646,8 +1700,11 @@ export default function Home() {
           className="scroll-mt-24 mb-10 rounded-3xl border border-stone-200/80 bg-white p-6 sm:p-10 shadow-2xs"
         >
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-semibold tracking-tight text-stone-900 text-center">
-              Preguntas frecuentes sobre la adopción
+            <p className="text-center text-[10px] font-semibold uppercase tracking-[0.26em] text-amber-800">
+              ✦ Atención al Adoptante
+            </p>
+            <h2 className="mt-2 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-[0.12em] text-stone-900 text-center">
+              Preguntas Frecuentes sobre la Adopción
             </h2>
             <div className="mt-6 divide-y divide-stone-200/70">
               {FAQS.map((faq, index) => {
